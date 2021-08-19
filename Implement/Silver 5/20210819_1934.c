@@ -17,6 +17,7 @@ int main() {
         if (A > B)
         {
             for (int try = 1; ; try++)
+            {
                 if (A * try % B == 0)
                 {
                     printf("%d\n", A * try);
