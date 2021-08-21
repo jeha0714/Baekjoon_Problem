@@ -12,6 +12,7 @@ int compare(const void * first, const void * second)
 
 int main() {
     
+    int N, K;
     scanf("%d %d", &N, &K);
     
     int array_N[N];
