@@ -4,10 +4,10 @@
 다음은 8×8 행렬이 주어졌다고 가정했을 때 222-풀링을 1회 적용하는 과정을 설명한 것이다
 
 	1. 행렬을 2×2 정사각형으로 나눈다.
- https://upload.acmicpc.net/61c48878-d2bb-4680-a7d3-8f9922f3c30f/-/preview/
+	<img src="https://upload.acmicpc.net/61c48878-d2bb-4680-a7d3-8f9922f3c30f/-/preview/">
  
 	2. 각 정사각형에서 2번째로 큰 수만 남긴다. 여기서 2번째로 큰 수란, 정사각형의 네 원소를 크기순으로 a4 ≤ a3 ≤ a2 ≤ a1 라 했을 때, 원소 a2를 뜻한다.
- https://upload.acmicpc.net/c2d98fd8-f0dd-4ab4-8fe7-f360e74fa86e/-/preview/
+	<img src="https://upload.acmicpc.net/c2d98fd8-f0dd-4ab4-8fe7-f360e74fa86e/-/preview/">
 
 
 	3. 2번 과정에 의해 행렬의 크기가 줄어들게 된다.
