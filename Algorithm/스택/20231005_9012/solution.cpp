@@ -12,7 +12,7 @@ int main(void)
 	int T;
 	int i;
 	std::string str;
-	std::vector<char> parenthesis;
+	std::vector<char> stack;
 
 	/* Set initial input */
 	std::cin >> T;
@@ -20,20 +20,20 @@ int main(void)
 	/* Find result in each case */
 	for (int test_case = 1; test_case <= T; test_case++)
 	{
-		/* Set parenthesis */
+		/* Set str */
 		str.clear();
-		parenthesis.clear();
+		stack.clear();
 		std::cin >> str;
 
 		/* Read string and push,pop stack */
 		for (i = 0; i < str.size(); i++)
 		{
 			if (str[i] == '(')
-				parenthesis.push_back('(');
+				stack.push_back('(');
 			else if (str[i] == ')')
 			{
-				if (parenthesis.size() > 0)
-					parenthesis.pop_back();
+				if (stack.size() > 0)
+					stack.pop_back();
 				else
 					break ;
 			}
@@ -42,7 +42,7 @@ int main(void)
 		/* Print result */
 			// Print 'YES' 
 			// if stack is empty and string reach the end.
-		if (parenthesis.size() == 0 && i == str.size())
+		if (stack.size() == 0 && i == str.size())
 			std::cout << "YES\n";
 		else
 			std::cout << "NO\n";
