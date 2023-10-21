@@ -1,5 +1,14 @@
 #include <iostream>
-#include <cmath> // sqrt
+#include <algorithm> // sort
+#include <vector> // vector
+
+bool compare(std::vector<int> a, std::vector<int> b)
+{
+	if (a.at(0) == b.at(0))
+		return (a.at(1) < b.at(1));
+	else
+		return (a.at(0) < b.at(0));
+}
 
 /* Main */
 int main(void)
@@ -8,42 +17,32 @@ int main(void)
 	std::cout.tie(NULL);
 	std::cin.tie(NULL);
 
-	int	N,M;
-	int *sequence;
-
+	int	N;
+	int	value;
+	std::vector<std::vector<int> > coordinate1;
+	std::vector <int> coordinate2;
+	
 	/* Set initial input */
-	std::cin >> M >> N;
-	sequence = new int[N + 1];
-	for (int n = 1; n <= N; n++)
-		sequence[n] = 1;
-
-	/* Sieve of Eratosthenes */
-		// Find prime number below the root N
-	for (int n = 1; n <= sqrt(N); n++)
+	std::cin >> N;
+	for (int i = 0; i < N; i++)
 	{
-		if (n == 1)
-			sequence[n] = 0;
-		else if (n != 1 && sequence[n] == 1)
-		{
-			for (int compare = 2; compare < n; compare++)
-			{
-				if (n % compare == 0)
-					sequence[n] = 0;
-			}
-		}
-		// Check not prime number below the N
-		if (sequence[n] == 1)
-		{
-			for (int i = 2; n * i <= N; i++)
-				sequence[n * i] = 0;
-		}
+		coordinate1.push_back(coordinate2);
+		std::cin >> value;
+		coordinate1[i].push_back(value);
+		std::cin >> value;
+		coordinate1[i].push_back(value);
 	}
 
-	/* Print result*/
-	for (int n = M; n <= N; n++)
+	/* Sort */
+	std::sort(coordinate1.begin(), coordinate1.end(), compare);
+
+	/* Print */
+	for (int i = 0; i < N; i++)
 	{
-		if (sequence[n] == 1)
-			std::cout << n << "\n";
+		std::cout << coordinate1[i][0];
+		std::cout << " ";
+		std::cout << coordinate1[i][1];
+		std::cout << "\n";
 	}
 
 	return (0);
